@@ -171,7 +171,7 @@ body {
 /* =========================================================
    HERO SECTION
 ========================================================= */
-.hero {
+.hero  {
     min-height: 100vh;
     padding-top: 6rem;
     display: flex;
@@ -179,6 +179,10 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+.hero p {
+    max-width: 600px;
+    margin: auto;
 }
 
 .hero-content {
