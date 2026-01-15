@@ -114,7 +114,7 @@ locationBtn.addEventListener('click', function () {
         navigator.geolocation.getCurrentPosition(
             async function (position) {
                 const { latitude, longitude } = position.coords;
-                const apiKey = 'fa331705614af40576717d024dd037a0';
+                const apiKey = 'fa331705614af40576717d024dd037a0';  //add api key here
                 // Fetch current weather data using city name
                 // Display weather details on UI
 
