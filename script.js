@@ -115,6 +115,8 @@ locationBtn.addEventListener('click', function () {
             async function (position) {
                 const { latitude, longitude } = position.coords;
                 const apiKey = 'fa331705614af40576717d024dd037a0';
+                // Fetch current weather data using city name
+                // Display weather details on UI
 
                 try {
                     const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`);
