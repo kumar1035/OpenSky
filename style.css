@@ -1,0 +1,357 @@
+/* =========================================================
+   GOOGLE FONT
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =========================================================
+   RESET
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   ROOT VARIABLES (PURPLE THEME)
+========================================================= */
+:root {
+    /* Purple Palette */
+    --purple-900: #1e003a;
+    --purple-800: #2e1065;
+    --purple-700: #4c1d95;
+    --purple-600: #6d28d9;
+    --purple-500: #7c3aed;
+    --purple-400: #a855f7;
+    --purple-300: #c4b5fd;
+
+    /* Gradients */
+    --primary-gradient: linear-gradient(135deg, #1e003a, #4c1d95);
+    --sunny-gradient: linear-gradient(135deg, #7c3aed, #a855f7);
+    --rainy-gradient: linear-gradient(135deg, #1e003a, #312e81);
+    --cloudy-gradient: linear-gradient(135deg, #4c1d95, #6d28d9);
+    --snowy-gradient: linear-gradient(135deg, #ede9fe, #c4b5fd);
+    --night-gradient: linear-gradient(135deg, #020617, #1e003a);
+
+    /* Glass UI */
+    --glass-bg: rgba(124, 58, 237, 0.18);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-shadow: 0 20px 50px rgba(124, 58, 237, 0.35);
+
+    /* Text */
+    --text-primary: #f5f3ff;
+    --text-secondary: rgba(245, 243, 255, 0.75);
+    --text-accent: #c4b5fd;
+}
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+[data-theme="light"] {
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(124, 58, 237, 0.2);
+    --glass-shadow: 0 15px 40px rgba(124, 58, 237, 0.25);
+
+    --text-primary: #2e1065;
+    --text-secondary: #5b21b6;
+    --text-accent: #7c3aed;
+
+    background: linear-gradient(135deg, #ede9fe, #f5f3ff);
+}
+
+/* =========================================================
+   BODY
+========================================================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: var(--primary-gradient);
+    color: var(--text-primary);
+    transition: background 0.5s ease, color 0.5s ease;
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   BACKGROUND CLOUDS
+========================================================= */
+.weather-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50px;
+    opacity: 0.6;
+    animation: float 25s linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50px;
+}
+
+.cloud-1 {
+    width: 100px;
+    height: 40px;
+    top: 20%;
+    left: -120px;
+}
+
+.cloud-2 {
+    width: 80px;
+    height: 30px;
+    top: 45%;
+    left: -100px;
+    animation-duration: 30s;
+}
+
+@keyframes float {
+    from { transform: translateX(0); }
+    to { transform: translateX(120vw); }
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(30, 0, 58, 0.6);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.logo i {
+    margin-right: 0.5rem;
+    background: var(--sunny-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.theme-toggle {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--glass-shadow);
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+.hero {
+    min-height: 100vh;
+    padding-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff, #c4b5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+/* =========================================================
+   SEARCH BAR
+========================================================= */
+.search-container {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 25px;
+    padding: 1rem;
+    box-shadow: var(--glass-shadow);
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-form {
+    display: flex;
+    gap: 1rem;
+}
+
+.search-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.search-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.search-btn,
+.location-btn {
+    background: var(--sunny-gradient);
+    border: none;
+    padding: 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.search-btn:hover,
+.location-btn:hover {
+    transform: scale(1.1);
+}
+
+/* =========================================================
+   WEATHER CARD
+========================================================= */
+.weather-card {
+    margin-top: 3rem;
+    padding: 2rem;
+    max-width: 420px;
+    width: 100%;
+    background: rgba(124, 58, 237, 0.22);
+    border-radius: 30px;
+    box-shadow: 0 30px 70px rgba(124, 58, 237, 0.45);
+    text-align: center;
+}
+
+.weather-icon {
+    font-size: 4rem;
+}
+
+.weather-temp {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #c4b5fd, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.weather-city,
+.weather-description {
+    color: var(--text-secondary);
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.detail-item {
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+/* =========================================================
+   FORECAST
+========================================================= */
+.forecast-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.forecast-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 2rem;
+}
+
+.forecast-card {
+    background: rgba(124, 58, 237, 0.2);
+    border-radius: 20px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.forecast-card:hover {
+    transform: translateY(-10px);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.footer {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(20px);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+}
+
+.social-links a:hover {
+    color: var(--text-primary);
+}
+
+/* =========================================================
+   UTILITIES
+========================================================= */
+.hidden {
+    display: none !important;
+}
