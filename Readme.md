@@ -1,6 +1,3 @@
-### Motivation
-Built to explore real-time weather APIs and modern UI design using glassmorphism.
-### Future Improvements
-- AI-based weather summary
-- Weather charts
-- PWA support
+OpenSky is a modern, responsive weather forecasting web application that blends real-time meteorological data with a clean, immersive user experience. Designed with a focus on simplicity and performance, OpenSky delivers accurate current weather conditions, extended forecasts, and location-based insights through an elegant interface featuring smooth animations and adaptive light/dark themes.
+
+Powered by live weather APIs, the application allows users to instantly search for any city worldwide or fetch weather data based on their current location. The visually rich UI, enhanced with glassmorphism and dynamic backgrounds, ensures an engaging experience across all devices.
